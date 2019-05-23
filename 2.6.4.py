@@ -23,8 +23,11 @@ for i in range(len(mtrx)):
     for j in range(len(mtrx[0])):
         res.append(mtrx[i-1][j] + mtrx[(i+1)%len(mtrx)][j] + mtrx[i][j-1] + mtrx[i][(j+1)%len(mtrx[0])])
 def chunks(lst):
-     chunk_size = int(len(lst) / 3)
+     chunk_size = int(len(lst) // len(mtrx))
      return [lst[i:i+chunk_size] for i in range(0, len(lst), chunk_size)]
-res_mtrx = chunks(res)
-for i in res_mtrx:
-    print (*i, end = '\n')
+if len(res)<=1:
+    print (*res)
+else:
+    res_mtrx = chunks(res)
+    for i in res_mtrx:
+        print (*i, end = '\n')

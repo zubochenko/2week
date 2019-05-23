@@ -11,5 +11,5 @@ for i in word:
         print (b, end = '')
         b = 1
     x += 1
-    word_2 = word[x:x + 1]
+    word_2 = word[x:x+1]
 
